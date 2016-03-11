@@ -2,16 +2,21 @@ package nodomain.spaceodyssey;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import Ships.MainShip;
@@ -102,6 +107,18 @@ public class MainActivity extends Activity implements SensorEventListener
         textViewPositionX = (TextView) findViewById(R.id.textViewPositionX);
         textViewPositionY = (TextView) findViewById(R.id.textViewPositionY);
 
+        RelativeLayout relativeLayoutMap = (RelativeLayout) findViewById(R.id.relativeLayoutMap);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+
+        relativeLayoutMap.setX(width * 3 / 4);
+        relativeLayoutMap.setY(0);
+
+        relativeLayoutMap.setLayoutParams(new RelativeLayout.LayoutParams((int) (width / 4), (int) (height / 4)));
     }
 
     @Override
