@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp">
+                android:padding="5dp"
+                android:id="@+id/game">
 
     <ImageView
         android:id="@+id/imageViewShip"
@@ -50,5 +51,24 @@
         android:layout_toRightOf="@+id/textViewSpeedY"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:paddingEnd="10dp"/>
+
+    <RelativeLayout
+        android:background="@drawable/border"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/relativeLayoutMap"
+        >
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
